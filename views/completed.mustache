@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dashboard.css">
+</head>
+<body onload="loading()">
+    <div id="loader"></div>
+    <br>
+    <h1 id="fetch"></h1>
+    <div style="display:none;" id="content" class="animate-bottom">
+      
+        
+        <div class="icon-scroll" id="small-menu" >
+        <div class="icon-bar" id="myIcons">
+
+
+ <a class="active" href="/dashboard">    <i class="fa fa-home" style="color: #fff;"></i></a> 
+          <a href="/add"> <i class="fa fa-plus" style="color: #fff;"></i><span>Add</span></a>  
+            <a href="/completed"><i class="fa fa-smile-o"style="color: #fff;"></i><span>Add</span></a>
+            <a href="/users/logout"><i class="fa fa-backward" style="color: #fff;"></i><span>Add</span></a>
+        </div>
+        </div>
+        <div class="main" id="myMain">
+           <h1>Hi {{user}} </h1>
+            <h3 style="margin-left:550px">Here are your achievements  </h3>
+            <div class="card-cont">
+                {{#goals}}
+                    <div class="card">
+                        <a href="/goal/{{_id}}"><h1 class="tit">{{title}}</h1></a>
+                        <h2><strong>Goal:</strong> {{goal}}</h2>
+                        <h2><strong>Date started:</strong>{{started}} </h2>
+                         <h2><strong>Description</strong> {{description}}</h2>
+                         <h2><strong>Completed:</strong> {{date}}</h2>
+                       
+                        
+                        
+                    </div>
+                {{/goals}}
+            </div>
+            {{^goals}}
+         
+                <h3 class="try">You have not completed any of your goals
+                </h3>
+            {{/goals}}
+        </div>
+        <form method="post" action="/search" role="form">
+                <input type="text" style="font-family:'Roboto', sans-serif" placeholder="Search for project" id="search" name="search">
+                <button type="submit" class="sea"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <script>
+       
+
+        var myVar;
+
+        function loading() {
+            myVar = setTimeout(showPage, 1500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("fetch").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: white;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    margin: -75px 0 0 -75px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+    transition-timing-function: ease;
+}
+  
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+  
+#content {
+    display: none;
+}
+
+.main {
+    height: 580px;
+    width: 80%;
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+}
+
+.pic {
+    width: 470px;
+    background-image: url('../login.jpeg');
+    height: 580px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-size: cover;
+}
+
+.details {
+    margin-left: 450px;
+    padding-top: 30px;
+}
+
+.details h1 {
+    color: blue;
+    font-size: 27px;
+    text-align: center;
+    position: relative;
+    top: 60px;
+}
+
+form {
+    position: relative;
+    top: 100px;
+    margin-top: 0px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+
+.fa-envelope {
+    position: relative;
+    top: 20px;
+    left: 40px;
+}
+
+.fa-lock {
+    position: relative;
+    top: 20px;
+    left: 40px;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 20px 0px;
+    padding-left: 50px;
+    display: block;
+    background-color: #E6E6E6;
+    border: 0px;
+    font-family: 'Advent Pro', sans-serif;
+    border-radius: 25px;
+    font-weight: 600;
+    outline: none;
+}
+
+input[type=email]:focus {
+    box-shadow: 0 10px 18px 0 rgba(118,132,250,0.4);
+}
+
+input[type=password]:focus {
+    box-shadow: 0 10px 18px 0 rgba(118,132,250,0.4);
+}
+  
+input[type=submit] {
+    width: 95%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Advent Pro', sans-serif;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    margin-top: 20px;
+    transition: 0.5s;
+    transition-timing-function: ease;
+    position: relative;
+    left: 15px;
+    outline: none;
+}
+
+input[type=submit]:hover {
+    background-color: #333;
+}
+
+.create {
+    font-weight: 400;
+    font-size: 13px;
+    position: relative;
+    left: 220px;
+    top: 150px;
+    color: #888888;
+    width: 30%;
+    text-decoration: none;
+}
+
+.fa-arrow-right {
+    position: relative;
+    left: 225px;
+    top: 151px;
+}
+
+.cre:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.cre a:hover {
+    color: blue;
+}
+
+.alert {
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 0px;
+    color: #888;
+    top: 65px;
+    padding: 10px 0px;
+    background-color: #D4EDDA;
+    border-radius: 10px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+#inc {
+    background-color: #F8D7DA;
+}

@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* 
+ {
+    box-sizing: border-box;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#myIcons span {
+    font-family: 'Raleway', sans-serif;
+    font-size:14px;
+    font-weight: 400;
+    color: black;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    bottom: 0;
+    left: 47px;
+    line-height: 38px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 0;}
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    margin: -75px 0 0 -75px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+#fetch {
+      text-align: center;
+      position: relative;
+      top: 320px;
+      font-weight: 500;
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  
+  /* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+    transition-timing-function: ease;
+}
+  
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+  
+#content {
+    display: none;
+}
+
+
+
+
+.icon-scroll {
+    position: relative;
+    -webkit-animation-name: animateright;
+    -webkit-animation-duration: 1s;
+    animation-name: animateright;
+    animation-duration: 1s;
+    transition-timing-function: ease;
+}
+
+@-webkit-keyframes animateleft {
+    from { left:-70px; opacity:0 } 
+    to { left:0px; opacity:1 }
+}
+  
+@keyframes animateleft { 
+    from{ left:-70px; opacity:0 } 
+    to{ left:0; opacity:1 }
+}
+
+.icon-bar {
+    width: 80px;
+    background-color:rgb(29, 29, 29);
+    height: 40%;
+    position: fixed;
+    z-index: 1;
+    margin-top: 60px;
+    overflow-x: hidden;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    transition: 1s;
+    transition-timing-function: ease;
+    transition-delay: 1s;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+
+    font-size: 25px;
+}
+.popping h3{
+    position: relative;
+ 
+    left: 40%;
+    bottom: 300px;
+    font-size: 16px;
+}
+
+.icon-bar a:hover {
+    background-color: blue;
+}
+
+
+
+.main {
+    height: 900px;
+    width: 75%;
+    margin-left: 250px;
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+    margin-top: 40px;
+    border-radius: 25px;
+    transition: margin-left .5s;
+    margin-bottom: 50px;
+}
+
+.pic {
+    width: 400px;
+    background-image: url('../edit.jpg');
+    height: 900px;
+    position: absolute;
+    z-index: 600;
+    overflow-x: hidden;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-size: cover;
+}
+
+.details {
+    margin-left: 450px;
+    padding-top: 30px;
+}
+
+.details h1 {
+    color:blue;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    color: #ccc;
+    width: 70%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: block;
+    background-color: #E6E6E6;
+    border: 0px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    font-weight: 600;
+    outline: none;
+}
+
+input[type=text]:hover {
+    box-shadow: 0 4px 10px 0 rgba(118,132,250,0.2);
+}
+
+#ckedit {
+    width: 65%;
+    position: relative;
+    left: 10px;
+}
+  
+input[type=submit] {
+    width: 40%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    margin-top: 20px;
+    transition: 0.5s;
+    transition-timing-function: ease;
+    outline: none;
+}
+
+input[type=submit]:hover {
+    background-color: #333;
+}
+
+label {
+    color: #757575;
+}
+
+.darkmode-layer, .darkmode-toggle {
+    z-index: 500;
+  }

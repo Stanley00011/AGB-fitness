@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../search.css">
+</head>
+<body onload="loading()">
+    <div id="loader"></div>
+    <br>
+    <h1 id="fetch">find goal</h1>
+   <div style="display:none;" id="content" class="animate-bottom">
+      
+        
+        <div class="icon-scroll" id="small-menu" >
+        <div class="icon-bar" id="myIcons">
+
+
+           <a class="active" href="/dashboard">    <i class="fas fa-home" style="color: #fff;"></i></a> 
+          <a href="/add"> <i class="fas fa-plus" style="color: #fff;"></i><span>Add</span></a>  
+          <a href="/completed"><i class="ffa fa-smile-o"style="color: #fff;"></i><span>Add</span></a>
+            <a href="/logout"><i class="a fa-backward" style="color: #fff;"></i><span>Add</span></a>
+        </div>
+        </div>
+        <div class="main" id="myMain">
+
+            <h3 class="date">{{date}}</h3>
+            {{#alert}}
+                <p class="alert">{{message}}</p>
+            {{/alert}}
+                {{#goal}}
+                    <div class="card">
+                        <a href="/goal/{{_id}}"><h1 class="tit">{{title}}</h1></a>
+                        <h2><strong>Goal:</strong> {{goal}}</h2>
+                        <h2><strong>Date started:</strong>{{started}} </h2>
+                         <h2><strong>Description</strong> {{description}}</h2>
+                       
+                       
+                        
+                    </div>
+                {{/goal}}
+            </div>
+            {{^goal}}
+                <i class="fas fa-exclamation-circle fa-8x" style="color: #CBDAA8;"></i> 
+                <h3 class="try">opps.. goal does not exist</h3>
+            {{/goal}}
+        </div>
+        <form method="post" role="form">
+                <input type="text" placeholder="Search for goal" id="search" name="search">
+                <button type="submit" class="sea"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById('scroll-icon').style.display = 'none';
+            document.getElementById("myNav").style.width = "270px";
+            document.getElementById("myMain").style.marginLeft = "270px";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0";
+            document.getElementById("myMain").style.marginLeft= "100px";
+            setTimeout(() => { document.getElementById('scroll-icon').style.display = 'block'; }, 1000);
+        }
+
+        var myVar;
+
+        function loading() {
+            myVar = setTimeout(showPage, 1500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("fetch").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    
+</body>
+</html>

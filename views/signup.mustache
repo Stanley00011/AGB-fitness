@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <link rel="stylesheet" href="../signup.css">
+</head>
+<body onload="loading()">
+    <div id="loader"></div>
+    <div style="display:none;" id="content" class="animate-bottom">
+    <div class="main" id="myMain">
+        <div class="pic"></div>
+        <div class="details">
+            <h1>Create Account</h1>
+            {{#errors}}
+                <p id="error">{{msg}}</p>
+            {{/errors}}
+            <form method="POST" action="/users/signup">
+                <div class="form-group">
+                    <i class="fas fa-user" style="color: #666;"></i>
+                    <input type="username" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope" style="color: #666;"></i>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock" style="color: #666;"></i>
+                    <input type="password" name="password" placeholder="Create Password">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock" style="color: #666;"></i>
+                    <input type="password" name="password2" placeholder="Confirm Password">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+            <div class="cre">
+            <a href="/users/login" class="create">Sign In</a>
+            <i class="fas fa-arrow-right fa-sm"></i>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        var myVar;
+
+        function loading() {
+            myVar = setTimeout(showPage, 1500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+</body>
+</html>
